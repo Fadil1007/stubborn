@@ -1,0 +1,22 @@
+[
+  {
+    "email": "admin@mail.com",
+    "roles": [
+      "ROLE_ADMIN"
+    ],
+    "password": "#Fadil_10",
+    "name": "John Doe",
+    "is_verified": true,
+    "delivery_adress": "582 grammont, 15 rue"
+  },
+  {
+    "email": "jonhdoe@mail.com",
+    "roles": [
+      "ROLE_USER"
+    ],
+    "password": "Azerty_10!",
+    "name": "standard",
+    "is_verified": true,
+    "delivery_adress": "20 boulevard, marc"
+  }
+]

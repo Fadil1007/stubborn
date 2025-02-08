@@ -1,0 +1,103 @@
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
+
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor/
+###< symfony/asset-mapper ###
+# Ignorer les fichiers dans les répertoires système
+/Applications Data/
+/Cookies/
+/Local Settings/
+/Mes documents/
+/Modèles/
+/Recent/
+/SendTo/
+/Voisinage d'impression/
+/Voisinage réseau/
+# Ignorer des répertoires systèmes
+**/.accessibility.properties
+**/.angular-config.json
+**/.bash_history
+**/.config/
+**/.dbclient/
+**/.docker/
+**/.gitconfig
+**/.node_repl_history
+**/.ssh/
+**/.symfony5/
+**/.vscode/
+**/.zenmap/
+**/3D Objects/
+**/AppData/
+**/Bibliotheque/
+**/Desktop/
+**/Documents/
+**/Downloads/
+**/Favorites/
+**/IntelGraphicsProfiles/
+**/Links/
+**/Local Sites/
+**/Music/
+**/NTUSER.DAT*
+**/OneDrive/
+**/Pictures/
+**/PycharmProjects/
+**/Saved Games/
+**/Searches/
+**/Tracing/
+**/Videos/
+**/node_modules/
+**/npm-cache/
+**/package-lock.json
+**/package.json
+**/python/
+**/scoop/
+**/setup.exe
+  # Ignorer les fichiers systèmes et autres répertoires externes
+**/.accessibility.properties
+**/.angular-config.json
+**/.bash_history
+**/.config/
+**/.dbclient/
+**/.docker/
+**/.gitconfig
+**/.node_repl_history
+**/.ssh/
+**/.symfony5/
+**/.vscode/
+**/.zenmap/
+**/AppData/
+**/Documents/
+**/Downloads/
+**/Favorites/
+**/IntelGraphicsProfiles/
+**/Links/
+**/Local Sites/
+**/Music/
+**/NTUSER.DAT*
+**/OneDrive/
+**/Pictures/
+**/PycharmProjects/
+**/Saved Games/
+**/Searches/
+**/Tracing/
+**/Videos/
