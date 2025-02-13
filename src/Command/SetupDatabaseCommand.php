@@ -39,6 +39,20 @@ class SetupDatabaseCommand extends Command
      * @param OutputInterface $output The output interface.
      * @return int The command exit code.
      */
+
+     protected function configure(): void
+    {
+        parent::configure();
+
+        // Ajout de l'option `--skip-fixtures`
+        $this
+            ->addOption(
+                'skip-fixtures',
+                null,
+                \Symfony\Component\Console\Input\InputOption::VALUE_NONE,
+                'Skip loading database fixtures'
+            );
+    }
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         // Define the commands to be executed for setting up the database
@@ -48,7 +62,12 @@ class SetupDatabaseCommand extends Command
             ['php', 'bin/console', 'doctrine:migrations:migrate', '--no-interaction'],
             ['php', 'bin/console', 'doctrine:fixtures:load', '--no-interaction'],
             ['php', 'bin/console', 'cache:clear'],
+            ['php bin/console app:setup-database --skip-fixtures'],
         ];
+        // Only add fixtures loading if environment is not 'prod'
+        if ($_ENV['APP_ENV'] !== 'prod') {
+            $commands[] = ['php', 'bin/console', 'doctrine:fixtures:load', '--no-interaction'];
+        }
 
         // Loop through each command and execute it
         foreach ($commands as $command) {
