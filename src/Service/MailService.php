@@ -43,7 +43,7 @@ class MailService
      */
     public function sendActivationEmail(string $toEmail, string $activationToken): void
     {
-        $activationLink = sprintf('http://127.0.0.1:8000/activate/%s', $activationToken);
+        $activationLink = sprintf('http://e.raifshop.fr/activate/%s', $activationToken);
         $htmlContent = $this->twig->render('emails/activation.html.twig', [
             'activationLink' => $activationLink,
         ]);
