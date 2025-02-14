@@ -21,25 +21,27 @@
                 <section class="best-sellers">
                     <h2>⭐ Nos Meilleures Ventes</h2>
                     <p>Découvrez nos modèles iconiques mis en avant :</p>
-                    <a href="{{ path('app_login') }}" class="nav-link {% if path == 'login'%} active {% endif %}">
+                    
                         <div class="products">
-                            <div class="product">
-                                <img src="{{ asset('build/images/1.jpeg') }}" alt="Blackbelt">
-                                <h3>Blackbelt</h3>
-                                <p>Élégant et intemporel</p>
-                            </div>
-                            <div class="product">
-                                <img src="{{ asset('build/images/4.jpeg') }}" alt="Pokeballt">
-                                <h3>Pokeball</h3>
-                                <p>Un design audacieux pour les fans</p>
-                            </div>
-                            <div class="product">
-                                <img src="{{ asset('build/images/9.jpeg') }}" alt="BornInUsa">
-                                <h3>BornInUsa</h3>
-                                <p>L’esprit américain dans un sweat</p>
-                            </div>
-                        </div>
-                    </a>    
+                            {% for product in products %}
+                                <div class="product">
+                                    <div class="card h-100 shadow">
+                                        <img src="{{ product.image ? asset('uploads/' ~ product.image) : asset('images/load_placeholder.png') }}" class="card-img-top" alt="Product image">
+                                        <div class="card-footer d-flex justify-content-between p-3">
+                                            <div>
+                                                <h5 class="card-title">{{ product.name }}</h5>
+                                                <p class="card-text">Prix : {{ product.price }} €</p>
+                                            </div>
+                                            {% if app.user %}   
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <a href="/product/{{ product.id }}" class="btn btn-warning">Voir</a>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>    
                     <p class="cta">👉 Explorez notre collection et trouvez votre style unique !</p>
                 </section>
 
@@ -58,27 +60,7 @@
 
             </div>
         </div>
-
-        <div class="products">
-            {% for product in products %}
-                <div class="col">
-                    <div class="card h-100 shadow">
-                        <img src="{{ product.image ? asset('uploads/' ~ product.image) : asset('images/load_placeholder.png') }}" class="card-img-top" alt="Product image">
-                        <div class="card-footer d-flex justify-content-between p-3">
-                            <div>
-                                <h5 class="card-title">{{ product.name }}</h5>
-                                <p class="card-text">Prix : {{ product.price }} €</p>
-                            </div>
-                            {% if app.user %}   
-                                <div class="d-flex flex-column justify-content-center">
-                                    <a href="/product/{{ product.id }}" class="btn btn-warning">Voir</a>
-                                </div>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
+            
     </main>
     
 {% endblock %}
