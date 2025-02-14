@@ -20,7 +20,7 @@ Clonez le dépôt Git sur le serveur
 
 | bash |
 | :---- |
-| `git clone https://github.com/Fadil1007/my_shop.git` |
+| `git clone https://github.com/Fadil1007/stubborn.git` |
 
 #### 
 
