@@ -105,7 +105,7 @@ class CheckOutController extends AbstractController
             return $this->redirect($url, Response::HTTP_SEE_OTHER);
         } catch (\Exception $e) {
             // Revert transaction in case of error
-            //$this->addFlash('error', $e->getMessage());
+            $this->addFlash('error', $e->getMessage());
             $this->entityManagerInterface->getConnection()->rollBack();
             $this->addFlash('error', 'Une erreur est survenue. Veuillez réessayer.');
 
